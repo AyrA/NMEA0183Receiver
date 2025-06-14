@@ -14,8 +14,9 @@ if (args.Length == 0 || args.Contains("/?"))
     return 0;
 }
 
-using var sp = new SerialPort("COM7", 4800, Parity.None, 8, StopBits.One);
+using var sp = new SerialPort(args[0], 4800, Parity.None, 8, StopBits.One);
 sp.Handshake = Handshake.RequestToSend;
+sp.DtrEnable = true;
 sp.Open();
 using var reader = new SerialReader(sp);
 using var decoder = new MessageProcessor(reader, false);
