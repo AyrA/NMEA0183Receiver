@@ -7,8 +7,8 @@ namespace MessageDecoder.Messages;
 /// Geographical latitude message (__GLL)
 /// </summary>
 /// <remarks>
-/// This is an outdated message and should not be used
-/// in favor of __RMC messages
+/// This is an outdated message and should not be used.
+/// Using __RMC messages is preferred if possible.
 /// </remarks>
 public class GeographicLatitudeLongitude : BaseSatnavMessage
 {
